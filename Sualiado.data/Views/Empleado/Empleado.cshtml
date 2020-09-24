@@ -1,0 +1,131 @@
+﻿
+<input id="can" value="empleados" type="hidden" />
+<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="/Inicio/Inicio">
+                <em class="flaticon-home"></em>
+            </a>
+        </li>
+        <li class="active">Empleados</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-md-6">
+        <h1 class="page-header">Empleados</h1>
+    </div>
+</div><!--/.row-->
+
+<div class="fixed-table-container">
+    <table class="table table-responsive-lg">
+        <thead class="border-bottom">
+            <tr>
+                <td colspan="8" scope="colgroup">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input placeholder="Buscar" onkeyup="BuscarPersona(this.value)" class="form-control" id="campo" />
+                        </div>
+                        <div class="col-md-2">
+                            <a data-toggle="modal" data-target="#agregarEmpleado" class="btn btn-md btn-outline-primary"><em class="flaticon-add-4"></em> Empleado </a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Borrar</th>
+            </tr>
+        </thead>
+        <tbody id="emp">
+        </tbody>
+    </table>
+</div>
+<div class="modal" id="agregarEmpleado">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h1 class="modal-title">Agregar Empleado</h1>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" id="bodyModal" style="height:500px; overflow:auto;">
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <label>Nombre:</label>
+                        <input type="text" class="form-control" id="nbre" placeholder="Nombre" autocomplete="off">
+                    </div>
+                    <div class="col-md-10">
+                        <label>Apellido:</label>
+                        <input type="text" class="form-control" id="ape" placeholder="Apellido" autocomplete="off">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-10">
+                        <label>Genero:</label>
+                        <Select class="custom-select form-control" id="gen">
+                            <Option value="seleccionar" selected="selected">Seleccionar</Option>
+                            <Option value="Femenino">Femenino</Option>
+                            <Option value="Masculino">Masculino</Option>
+
+                        </Select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10">
+                        <label>Cargo:</label>
+                        <Select class="custom-select form-control" id="menu">
+                            <Option value="seleccionar" selected="selected">Seleccionar</Option>
+                            <Option value="1" selected="selected">Administrador</Option>
+                            <Option value="2" selected="selected">Vendedor</Option>
+                            <Option value="3" selected="selected">Tecnico</Option>
+                        </Select>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-10">
+                        <label>Cedula de tu empleado:</label>
+                        <input type="text" class="form-control" placeholder="Cedula" id="cedula" autocomplete="off">
+                    </div>
+                    <div class="col-md-10">
+                        <label>Dirección:</label>
+                        <input type="text" class="form-control" placeholder="Direccion" id="dic" autocomplete="off">
+                    </div>
+                    <div class="col-md-10">
+                        <label>Teléfono:</label>
+                        <input type="text" class="form-control" placeholder="Telefono" id="tel" autocomplete="off">
+                    </div>
+                </div>
+                <br />
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <label>Correo:</label>
+                        <input type="email" class="form-control" placeholder="Correo" id="correo" autocomplete="off">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+
+                <button class="btn btn-primary border-0" onclick="AgregarEmpleado()">Agregar empleado</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>

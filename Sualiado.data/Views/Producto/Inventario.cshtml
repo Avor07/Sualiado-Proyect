@@ -1,0 +1,238 @@
+﻿<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="/Inicio/Inicio">
+                <em class="flaticon-home"></em>
+            </a>
+        </li>
+        <li class="active">Productos</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-md-6">
+        <h1 class="page-header">Productos en el inventario</h1>
+    </div>
+</div><!--/.row-->
+
+<input id="can" value="productos" type="hidden" />
+
+
+<div class="fixed-table-container" id="tablas">
+
+    <table id="mitabla" class="table table-responsive-lg" style="overflow:auto;">
+        <thead class="border-bottom">
+            <tr>
+                <td scope="colgroup" colspan="6">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input class="form-control col-8" type="text" placeholder="Buscar un producto" onkeyup="BuscarInventario()" aria-label="Search" id="campo">
+                        </div>
+                        <div class="col-md-2">
+                            <a data-toggle="modal" class="btn btn-outline-primary" data-target="#agregarProducto" class="btn btn-md btn-link" onclick="CargarMenus()">
+                                <em class="flaticon-add-4">&nbsp;</em><strong>Producto</strong>
+                            </a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">Imagen</th>
+                <th scope="col">Referencia</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Proveedor</th>
+                <th scope="col">Opciones</th>
+            </tr>
+
+        </thead>
+        <tbody id="Productos">
+        </tbody>
+    </table>
+
+    </div>
+    <div class="modal " id="editar">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title">Actualizar producto</h1>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" id="editarProducto" style="height:400px; overflow:auto;">
+
+                    <div class="form-group">
+                        <label for="id">Identificación del producto:</label>
+                        <input type="text" class="form-control" Id="idproEdi" readonly="readonly" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Referencia</label>
+                        <input type="text" class="form-control" id="ref" readonly="readonly" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Nombre del producto:</label>
+                        <input type="text" class="form-control" id="Nbre" />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="id">Precio de venta:</label>
+                            <input type="text" class="form-control" id="precio" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="id">Precio de compra:</label>
+                            <input type="text" class="form-control" id="precioCompra1" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Cantidad Disponible:</label>
+                        <input type="text" class="form-control" id="cant" readonly="readonly" />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="id">Proveedor:</label>
+                            <input id="proveedorV" type="hidden" readonly />
+                            <input class="form-control" id="proveedor" readonly="readonly" type="text" />
+
+                        </div>
+                        <div class="col-md-6">
+                            <label for="id">Elegir uno nuevo:</label>
+                            <Select class="custom-select form-control" onchange="CambiarProveedor(this)" id="menuProveedor">
+                            </Select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="id">Categoría:</label>
+                            <input id="tipoV" type="hidden" readonly />
+                            <input class="form-control" id="tipo" type="text" readonly />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="id">Elegir una nueva:</label>
+                            <Select class="custom-select form-control" onchange="CambiarCategoria(this)" id="menu">
+                            </Select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Cambiar imagen del producto:</label>
+                        <input class="form-control-file" id="file" type="file" />
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <button class="btn btn-primary" onclick="Actualizar()" value="1">Guardar cambios</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="agregarProducto">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title">Agregar producto</h1>
+                    <button type="button" class="close" data-dismiss="modal" onclick="Limpiar()">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" id="producto" style="height:400px; overflow:auto;">
+
+                    <div class="form-group">
+                        <label for="refe">Agrega la referencia:</label>
+                        <input type="text" placeholder="El codigo unico de tu producto" class="form-control" id="referencia" />
+                    </div>
+                    <div class="form-group">
+                        <label for="nbre">Nombre del producto:</label>
+                        <input type="text" class="form-control" id="nbre" placeholder="Un nombre" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Precio de venta:</label>
+                        <input type="text" placeholder="precio de venta" class="form-control" id="precioVenta" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Precio de compra:</label>
+                        <input type="text" placeholder="precio de compra" class="form-control" id="precioCompra" />
+                    </div>
+                    <label for="id">Categoría:</label>
+                    <div class="form-group">
+                        <Select class="custom-select form-control" id="menuCategoria">
+                        </Select>
+                    </div>
+                    <label for="id">Proveedor:</label>
+                    <div class="form-group">
+                        <Select class="custom-select form-control" id="menupro">
+                        </Select>
+                    </div>
+                    <label for="id">Imagen del producto:</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="fileImage" />
+                       
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <button class="btn btn-primary" onclick="AgregarProducto()" value="1">Agregar</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal" id="entrada">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title">Agregar compra</h1>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" id="provedorInfo" style="height:400px; overflow:auto;">
+                    <div class="form-group">
+                        <label for="id">Fecha:</label>
+                        <input type="text" class="form-control" readonly id="date" autocomplete="off" />
+                    </div>
+                    <label for="id">Producto:</label>
+                    <input id="proId" type="hidden" value="" />
+                    <div class="form-group">
+                        <input type="text" class="form-control" Id="Id" autocomplete="off" />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="id">Proveedor:</label>
+                            <input id="prove" type="hidden" value="" />
+                            <input class="form-control" id="provee2" readonly="readonly" type="text" />
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Cantidad:</label>
+                        <input type="number" class="form-control" id="canti" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Precio compra:</label>
+                        <input type="number" class="form-control" id="preComp" autocomplete="off" />
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <button class="btn btn-primary" onclick="AgregarStock()" value="1">Agregar</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>

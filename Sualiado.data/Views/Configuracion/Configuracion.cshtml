@@ -1,0 +1,177 @@
+﻿<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="/Inicio/Inicio">
+                <em class="flaticon-home"></em>
+            </a>
+        </li>
+        <li class="active">Perfil</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Tu perfil</h1>
+    </div>
+</div><!--/.row-->
+<input id="can" value="config" type="hidden" />
+<div class="row">
+
+    <div class="col-md-7">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Tu información
+
+                <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Nombre</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input value="" class="form-control" id="nombre" />
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Apellido</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input value="" class="form-control" id="apellido" />
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Direccion</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input value="" class="form-control" id="direccion" />
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Telefono</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input value="" class="form-control" id="telefono" />
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Cargo</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input value="" class="form-control" id="cargo" />
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Identificación</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="number" value="" class="form-control" id="usuario" />
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Correo</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input value="" class="form-control" id="correo" />
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Genero</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input value="" class="form-control" id="genero" />
+                        &nbsp;
+                        <label>Elegir uno nuevo:</label>
+                        <select id="menu" class="form-control" style="outline:none;">
+                            <option selected="selected" value="seleccionar">Seleccionar</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-9">
+                        
+
+                    </div>
+                    <div class="col-md-3">
+                        <button onclick="EditarInfoPersonal()" class="btn btn-primary">Actualiazar</button>
+
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">Foto de perfil</div>
+            <div class="panel-body">
+                <img src="@ViewBag.perfile" class="profile-userpicedit" />
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-10">
+                    <input class="form-control-file" id="file" type="file" />
+
+                    </div>
+                    <div class="col-md-1">
+                    <button onclick="CambiarImagen()" class="btn btn-sm btn-primary"><em class="flaticon-diskette"></em></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Cambiar Contraseña</div>
+            <div class="panel-body">
+                <label>Clave Actual</label>
+                <div class="form-group">
+                    <input id="contra" type="password" class="form-control border-bottom" placeholder="Contraseña actual" />
+                </div>
+                <label>Contraseña</label>
+                <div class="form-group">
+                    <input id="contraN" type="password" class="form-control border-bottom" placeholder="Nueva contraseña" />
+                </div>
+                <label>Confirmar contraseña</label>
+                <div class="form-group">
+                    <input id="contraC" type="password" class="form-control border-bottom" placeholder="Confirmar contraseña nueva" />
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6">
+
+
+                    </div>
+                    <div class="col-md-6">
+                        
+                <button onclick="CambiarContraseña()" class="btn btn-primary">Cambiar contraseña</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

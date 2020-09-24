@@ -1,0 +1,48 @@
+﻿<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="/Inicio/Inicio">
+                <em class="flaticon-home"></em>
+            </a>
+        </li>
+        <li class="active">Compras</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Compras de la microempresa</h1>
+    </div>
+</div><!--/.row-->
+
+<input type="hidden" id="can" value="entradas" />
+<div class="col">
+
+    <div class=fixed-table-container>
+        <table class="table table-responsive-lg">
+            <thead class="border-bottom">
+                <tr>
+                    <th scope="colgroup" colspan="6">
+
+                        <h1 class="">Entradas</h1>
+                        <input class="form-control float-right" type="date" onchange="BuscarEntrada(this.value)" placeholder="Buscar un producto" aria-label="Search" id="campo">
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>Producto</th>
+                    <th>Proveedor</th>
+                    <th>Cantidad</th>
+                    <th>Precio Compra</th>
+                    <th>Persona</th>
+                    <th>Día/Mes/Año</th>
+                </tr>
+
+            </thead>
+            <tbody id="entradas">
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

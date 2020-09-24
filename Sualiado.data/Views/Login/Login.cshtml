@@ -1,0 +1,87 @@
+﻿@{
+     Layout = "~/Views/Shared/_DisenoLogin.cshtml";
+}
+    <!-- Hero Area Start-->
+    <!-- Hero Area End-->
+    <!--================login_part Area =================-->
+    <section class="login_part">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="login_part_form">
+                        <div class="login_part_form_iner">
+                            <img src="~/Content/img/3589136.jpg" height="600" width="500" class="img-responsive2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="login_part_form">
+                        <div id="login" class="login_part_form_iner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <img src="~/Content/img/LOGOTIPO.png"  />
+                                </div>
+                            </div><br />
+                            <center>
+                            <h5>Inicia Sesión</h5>
+                            </center><br />
+                            <div class="row contact_form" action="#"  novalidate="novalidate">
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="usu" name="name" value=""
+                                           placeholder="Identificación">
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="pass" name="password" value=""
+                                           placeholder="Contraseña">
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <div class="creat_account d-flex align-items-center">
+                                        <input type="checkbox" onchange="MostrarContraseña()" id="f-option" name="selector">
+                                        <label for="f-option">Mostrar contraseña</label>
+                                    </div>
+                                    <label id="mensage"></label>
+                                    <button type="submit" value="submit" onclick="Inicio()" class="btn_3">
+                                       Ingresar
+                                    </button>
+                                    <a onclick="CambiarClave()" class="lost_pass">¿Olvidaste tu contraseña?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href='https://www.freepik.es/fotos-vectores-gratis/ordenador'>Vector de Ordenador creado por fullvector - www.freepik.es</a>
+    <!--================login_part end =================-->
+<!--<div class="limiter">
+
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-form validate-form">
+                <span class="login100-form-title p-b-43">
+                    Entrar a Sualiado
+                </span>
+
+
+                <div class="wrap-input100 validate-input">
+                    <input type="text" placeholder="Usuario" id="usu" class="input100" autocomplete="off" />
+                </div>
+
+
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input type="password" placeholder="Contraseña" id="pass" class="input100" />
+                </div>
+                <div class="container-login100-form-btn">
+                    <Button class="login100-form-btn" name="entrar" onclick="Inicio()">Entrar</Button>
+                </div>
+
+
+
+            </div>
+
+            <div class="login100-more" style="background-image: url('../../Content/img/bg-01.jpg');">
+            </div>
+        </div>
+    </div>
+</div>-->

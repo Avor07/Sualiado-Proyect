@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sualiado.data", "Sualiado.data\Sualiado.data.csproj", "{CB030C56-DADB-4A5C-924B-73D6B785ECE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB030C56-DADB-4A5C-924B-73D6B785ECE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB030C56-DADB-4A5C-924B-73D6B785ECE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB030C56-DADB-4A5C-924B-73D6B785ECE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB030C56-DADB-4A5C-924B-73D6B785ECE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0EAF645-3D94-4EA9-BAF0-A115BF2BC523}
+	EndGlobalSection
+EndGlobal

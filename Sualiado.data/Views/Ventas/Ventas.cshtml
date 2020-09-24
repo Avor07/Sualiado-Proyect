@@ -1,0 +1,93 @@
+﻿
+<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="/Inicio/Inicio">
+                <em class="flaticon-home"></em>
+            </a>
+        </li>
+        <li class="active">Ventas</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-md-6">
+        <h1 class="page-header">Hacer una venta</h1>
+    </div>
+</div><!--/.row-->
+<input id="can" value="1" type="hidden" />
+<input type="hidden" id="invt" value="pro" />
+<div class="fixed-table-container">
+    <table id="tablaventas" class="table table-responsive-lg">
+        <thead class="border-bottom">
+            <tr>
+                <td scope="colgroup" colspan="5">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input class="form-control" type="text" onkeyup="Buscar()" placeholder="Buscar un producto" aria-label="Search" id="campo">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-inline">
+                                <a data-toggle="modal" data-target="#resumen" class="btn btn-outline-primary">
+                                    Resumen de la venta
+                                    <em class="flaticon-shopping-cart-2"></em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <th>Imagen</th>
+                <th>Referencia</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Agregar</th>
+            </tr>
+
+        </thead>
+        <tbody id="DatosServer">
+        </tbody>
+    </table>
+</div>
+<div class="modal" id="resumen">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h1 class="modal-title">Carrito</h1>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" id="bodyModal" style="height:500px; overflow:auto;">
+                <div id="alerta"></div>
+                <div class="fixed-table-container" id="tablas">
+                    <table class="table table-responsive-lg">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Stock</th>
+                                <th scope="col">cantidad</th>
+                                <th>Borrar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modalTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+
+                <button class="btn btn-primary border-0" onclick="Finalizar(this)" value="1">Finalizar venta</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

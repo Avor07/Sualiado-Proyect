@@ -1,0 +1,77 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<input id="can" value="agenda" type="hidden" />
+<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="/Inicio/Inicio">
+                <em class="flaticon-home"></em>
+            </a>
+        </li>
+        <li class="active">Agenda</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Programate</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-primary" style="height:300px;">
+            <div class="panel-heading">
+                Asignar Tareas
+            </div>
+            <div class="panel-body">
+                <label>Empleado</label>
+                <select id="menu" class="form-control">
+                    <option value="seleccionar">
+                        Seleccionar
+                    </option>
+                </select>
+                <label>Tarea</label>
+                <textarea placeholder="Escribe aquí la tarea" class="form-control" id="tarea"></textarea>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6">
+
+
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary" onclick="Asignar()">Asignar tarea</button>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-success" style="height:300px;">
+            <div class="panel-heading">
+                Tareas completadas
+            </div>
+            <div class="panel-body">
+                <ul id="tareasCom" class='todo-list'>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-warning" style="height:300px;">
+            <div class="panel-heading">
+                Tareas por cumplir
+            </div>
+            <div class="panel-body">
+                <ul id="tareasInc" class='todo-list'>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,129 @@
+﻿
+<input id="can" value="proveedores" type="hidden" />
+<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="/Inicio/Inicio">
+                <em class="flaticon-home"></em>
+            </a>
+        </li>
+        <li class="active">Proveedores</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Proveedores</h1>
+    </div>
+</div>
+<div class=fixed-table-container>
+    <table class="table table-responsive-lg">
+        <thead class="border-bottom">
+            <tr>
+                <th scope="colgroup" colspan="5">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input class="form-control col-12" type="text" onkeyup="BuscarProveedor()" placeholder="Buscar un proveedor" aria-label="Search" id="campo">
+                        </div>
+                        <div class="col-lg-3">
+                            <a data-toggle="modal" data-target="#proveedor" class="btn btn-outline-primary float-right">
+                                <em class="flaticon-add-4"></em> Proveedor 
+                            </a>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>Nombre proveedor</th>
+                <th>Contacto</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>Editar</th>
+            </tr>
+
+        </thead>
+        <tbody id="Proveedores">
+        </tbody>
+    </table>
+    </div>
+    <div class="modal" id="proveedor">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title">Agregar proveedor</h1>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" id="provedorInfo" style="height:400px; overflow:auto;">
+
+                    <div class="form-group">
+                        <label for="id">Nombre del proveedor:</label>
+                        <input type="text" class="form-control" Id="NbrePro" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Nombre contacto:</label>
+                        <input type="text" class="form-control" id="cont" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Teléfono:</label>
+                        <input type="number" class="form-control" id="tel" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Correo:</label>
+                        <input type="text" class="form-control" id="correo" autocomplete="off" />
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <button class="btn btn-primary" onclick="AgregarProveedor()" value="1">Agregar</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="editar">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title">Editar Proveedor</h1>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" id="provedorInfo" style="height:400px; overflow:auto;">
+                    <input type="hidden" Id="IdProveedor" autocomplete="off" />
+                    <div class="form-group">
+                        <label for="id">Nombre del proveedor:</label>
+                        <input type="text" class="form-control" Id="Nbrepro" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Nombre contacto:</label>
+                        <input type="text" class="form-control" id="contacto" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Teléfono:</label>
+                        <input type="number" class="form-control" id="tell" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Correo:</label>
+                        <input type="text" class="form-control" id="correoo" autocomplete="off" />
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <button class="btn btn-primary" onclick="ActualizarProveedor()" value="1">Actualizar</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
